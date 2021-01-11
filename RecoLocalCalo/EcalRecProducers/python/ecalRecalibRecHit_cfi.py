@@ -1,15 +1,17 @@
 import FWCore.ParameterSet.Config as cms
 
 # re-calibrated rechit producer
-ecalRecHit = cms.EDProducer("EcalRecalibRecHitProducer",
+ecalRecalibRecHit = cms.EDProducer("EcalRecalibRecHitProducer",
+    EERecHitCollection = cms.InputTag("ecalRecHit","EcalRecHitsEE"),
+    EBRecHitCollection = cms.InputTag("ecalRecHit","EcalRecHitsEB"),
+    EBRecalibRecHitCollection = cms.string('EcalRecHitsEB'),
+    EERecalibRecHitCollection = cms.string('EcalRecHitsEE'),
     doEnergyScale = cms.bool(False),
     doEnergyScaleInverse = cms.bool(False),
     doIntercalib = cms.bool(False),
     doIntercalibInverse = cms.bool(False),
-    EERecHitCollection = cms.InputTag("ecalRecHit","EcalRecHitsEE"),
-    EBRecHitCollection = cms.InputTag("ecalRecHit","EcalRecHitsEB"),
     doLaserCorrections = cms.bool(False),
     doLaserCorrectionsInverse = cms.bool(False),
-    EBRecalibRecHitCollection = cms.string('EcalRecHitsEB'),
-    EERecalibRecHitCollection = cms.string('EcalRecHitsEE')
+    doTimeCalib = cms.bool(False),
+    doTimeCalibInverse = cms.bool(False)
 )

@@ -35,8 +35,10 @@ class EcalRecalibRecHitProducer : public edm::global::EDProducer<> {
                 const bool doEnergyScale_;
                 const bool doIntercalib_;
                 const bool doLaserCorrections_;
+                const bool doTimeCalib_;
 		const bool doEnergyScaleInverse_;
 		const bool doIntercalibInverse_;
                 const bool doLaserCorrectionsInverse_;
+                const bool doTimeCalibInverse_;
 };
 #endif
